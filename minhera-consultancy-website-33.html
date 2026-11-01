@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MINHERA CONSULTANCY — visa applications, immigration permits, passport assistance, moving services and home decor in Kenya.">
+  <meta name="theme-color" content="#24170f">
+  <title>MINHERA CONSULTANCY | Travel & Immigration Support</title>
+  <style>
+    :root {
+      --brown: #24170f;
+      --brown-2: #382419;
+      --gold: #d5ad62;
+      --cream: #f6f0e6;
+      --muted: #cfc2b1;
+      --white: #fffdf9;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--white);
+      background: var(--brown);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, 92%); margin: auto; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(36, 23, 15, .96);
+      border-bottom: 1px solid rgba(213,173,98,.28);
+      backdrop-filter: blur(10px);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: 2px; color: var(--gold); font-size: 1.15rem; }
+    .brand small { display: block; color: var(--cream); font-size: .62rem; letter-spacing: 3px; font-weight: 500; }
+    nav { display: flex; gap: 24px; align-items: center; font-size: .92rem; }
+    nav a:hover { color: var(--gold); }
+    .menu { display: none; border: 1px solid var(--gold); color: var(--gold); background: transparent; padding: 8px 12px; border-radius: 6px; }
+    .hero {
+      min-height: 590px; display: grid; align-items: center;
+      background:
+        linear-gradient(90deg, rgba(25,15,9,.96), rgba(25,15,9,.78) 55%, rgba(25,15,9,.42)),
+        radial-gradient(circle at 80% 35%, #79552d 0, #382419 38%, #24170f 72%);
+      border-bottom: 1px solid rgba(213,173,98,.25);
+    }
+    .hero-content { max-width: 720px; padding: 90px 0; }
+    .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: .78rem; font-weight: 700; }
+    h1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.05; margin: 18px 0; }
+    h1 span, h2 span { color: var(--gold); }
+    .hero p { max-width: 600px; color: var(--muted); font-size: 1.12rem; }
+    .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+    .btn { display: inline-block; padding: 13px 22px; border-radius: 5px; font-weight: 700; transition: .2s; }
+    .btn-gold { background: var(--gold); color: #24170f; }
+    .btn-outline { border: 1px solid var(--gold); color: var(--gold); }
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.08); }
+    section { padding: 82px 0; }
+    .light { background: var(--cream); color: var(--brown); }
+    .section-head { max-width: 700px; margin-bottom: 34px; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin: 10px 0 14px; }
+    .section-head p { color: #75685b; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .service {
+      padding: 25px; border: 1px solid rgba(213,173,98,.35);
+      background: #302016; border-radius: 9px; min-height: 205px;
+    }
+    .light .service { background: var(--white); border-color: #e6d8c2; }
+    .service .symbol { color: var(--gold); font-size: 1.7rem; }
+    .service h3 { margin: 10px 0 7px; }
+    .service p { color: var(--muted); margin: 0; font-size: .95rem; }
+    .light .service p { color: #75685b; }
+    .about { display: grid; grid-template-columns: 1.1fr .9fr; gap: 45px; align-items: center; }
+    .about p { color: var(--muted); }
+    .promise { padding: 28px; border: 1px solid rgba(213,173,98,.45); border-radius: 9px; background: var(--brown-2); }
+    .promise li { margin: 10px 0; color: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
+    .contact-card { background: #302016; border: 1px solid rgba(213,173,98,.35); padding: 28px; border-radius: 9px; }
+    .contact-card p { color: var(--muted); }
+    .contact-card a:not(.btn) { color: var(--gold); overflow-wrap: anywhere; }
+    form { display: grid; gap: 12px; }
+    input, textarea, select {
+      width: 100%; padding: 13px; border: 1px solid #806344; border-radius: 5px;
+      background: #21150e; color: var(--white); font: inherit;
+    }
+    textarea { min-height: 115px; resize: vertical; }
+    footer { padding: 25px 0; border-top: 1px solid rgba(213,173,98,.25); color: var(--muted); font-size: .88rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    .note { font-size: .82rem; color: #a99b89; margin-top: 18px; }
+    @media (max-width: 760px) {
+      .menu { display: block; }
+      nav { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 20px 4%; background: var(--brown); flex-direction: column; align-items: flex-start; border-bottom: 1px solid rgba(213,173,98,.3); }
+      nav.open { display: flex; }
+      .grid { grid-template-columns: 1fr; }
+      .about, .contact-grid { grid-template-columns: 1fr; }
+      .hero { min-height: 520px; }
+      section { padding: 62px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home">MINHERA <small>CONSULTANCY</small></a>
+      <button class="menu" id="menuButton" aria-label="Open navigation" aria-expanded="false">MENU</button>
+      <nav id="navigation">
+        <a href="#home">Home</a><a href="#services">Our Services</a><a href="#about">About Us</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="hero-content">
+          <div class="eyebrow">Your journey. Our expertise.</div>
+          <h1>Travel further.<br><span>Move forward.</span></h1>
+          <p>MINHERA CONSULTANCY provides support with visa applications, immigration permits, passport services and more. Let us help you take the next step with confidence.</p>
+          <div class="actions">
+            <a class="btn btn-gold" href="https://wa.me/254798019775?text=Hello%20MINHERA%20CONSULTANCY%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">Chat on WhatsApp</a>
+            <a class="btn btn-outline" href="#services">Explore Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="light" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">What we do</div>
+          <h2>Services designed to <span>move you forward.</span></h2>
+          <p>Get in touch with our team to discuss the service you need, the requirements and the applicable fees.</p>
+        </div>
+        <div class="grid">
+          <article class="service"><div class="symbol">✈</div><h3>Visa Applications</h3><p>Guidance and application support for a range of destination visas, subject to each country's requirements.</p></article>
+          <article class="service"><div class="symbol">▤</div><h3>Immigration Permits</h3><p>Assistance with permit application processes and the relevant documentation.</p></article>
+          <article class="service"><div class="symbol">▣</div><h3>Passport Services</h3><p>Support with passport applications, renewals and replacement application processes.</p></article>
+          <article class="service"><div class="symbol">◎</div><h3>Document Assistance</h3><p>Support with selected document applications and appointment-booking processes.</p></article>
+          <article class="service"><div class="symbol">➜</div><h3>Moving Services</h3><p>Enquire about moving and relocation assistance for your next transition.</p></article>
+          <article class="service"><div class="symbol">⌂</div><h3>Home Decor</h3><p>Ask us about home decor services and ways to refresh your space.</p></article>
+        </div>
+        <p class="note">MINHERA CONSULTANCY does not issue visas, passports or permits. Final decisions are made by the relevant government authorities. Requirements, fees and processing times may change.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about">
+        <div>
+          <div class="eyebrow">About MINHERA</div>
+          <h2>Professional support for <span>your next chapter.</span></h2>
+          <p>MINHERA CONSULTANCY is focused on helping clients navigate travel, immigration and related service processes. We aim to make each step clearer by helping clients understand the documentation and procedures involved.</p>
+          <p>Whether you are preparing to travel, applying for a permit or planning a move, contact us to discuss your needs.</p>
+          <a class="btn btn-gold" href="#contact">Talk to our team</a>
+        </div>
+        <div class="promise">
+          <div class="eyebrow">Our commitment</div>
+          <h3>Clear guidance. Reliable communication.</h3>
+          <ul>
+            <li>Helpful information about application requirements</li>
+            <li>Support with document preparation processes</li>
+            <li>Communication throughout the service process</li>
+            <li>Respectful and client-focused assistance</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="light" id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Get in touch</div>
+          <h2>Let's discuss <span>your plans.</span></h2>
+          <p>Send us an enquiry and our team can help you understand the next steps.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>MINHERA CONSULTANCY</h3>
+            <p><strong>Phone / WhatsApp:</strong><br><a href="https://wa.me/254798019775" target="_blank" rel="noopener">+254 798 019 775</a></p>
+            <p><strong>Email:</strong><br><a href="mailto:minhera68@gmail.com">minhera68@gmail.com</a></p>
+            <p><strong>Instagram:</strong><br><a href="https://www.instagram.com/minhera_consultancy/" target="_blank" rel="noopener">@minhera_consultancy</a></p>
+          </div>
+          <div class="contact-card">
+            <h3>Send an enquiry</h3>
+            <form id="enquiryForm">
+              <input id="name" type="text" placeholder="Your name" aria-label="Your name" required>
+              <input id="email" type="email" placeholder="Your email (optional)" aria-label="Your email">
+              <select id="service" aria-label="Service you need">
+                <option value="Visa application">Visa application</option>
+                <option value="Immigration permit">Immigration permit</option>
+                <option value="Passport service">Passport service</option>
+                <option value="Document assistance">Document assistance</option>
+                <option value="Moving services">Moving services</option>
+                <option value="Home decor">Home decor</option>
+                <option value="Other enquiry">Other enquiry</option>
+              </select>
+              <textarea id="message" placeholder="Tell us briefly what you need" aria-label="Your message" required></textarea>
+              <button class="btn btn-gold" type="submit">Send via WhatsApp</button>
+            </form>
+            <p class="note">This form opens WhatsApp with your message. It does not store or submit your details to this website.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© <span id="year"></span> MINHERA CONSULTANCY. All rights reserved.</span>
+      <span>Travel • Visa • Immigration • Moving • Home Decor</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const navigation = document.getElementById('navigation');
+    menuButton.addEventListener('click', () => {
+      const isOpen = navigation.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+    });
+    navigation.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navigation.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('enquiryForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value.trim();
+      const text = `Hello MINHERA CONSULTANCY. My name is ${name}. I need help with: ${service}. ${message}${email ? ` My email is ${email}.` : ''}`;
+      window.open(`https://wa.me/254798019775?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+    });
+  </script>
+</body>
+</html>
